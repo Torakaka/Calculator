@@ -38,6 +38,7 @@
             this.zahl8Button = new System.Windows.Forms.Button();
             this.zahl7Button = new System.Windows.Forms.Button();
             this.zahl0Button = new System.Windows.Forms.Button();
+            this.AnzeigeTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // zahl1Button
@@ -130,11 +131,20 @@
             this.zahl0Button.Text = "0";
             this.zahl0Button.UseVisualStyleBackColor = true;
             // 
+            // AnzeigeTextBox
+            // 
+            this.AnzeigeTextBox.Enabled = false;
+            this.AnzeigeTextBox.Location = new System.Drawing.Point(43, 32);
+            this.AnzeigeTextBox.Name = "AnzeigeTextBox";
+            this.AnzeigeTextBox.Size = new System.Drawing.Size(138, 20);
+            this.AnzeigeTextBox.TabIndex = 10;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.AnzeigeTextBox);
             this.Controls.Add(this.zahl0Button);
             this.Controls.Add(this.zahl7Button);
             this.Controls.Add(this.zahl8Button);
@@ -148,6 +158,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -163,6 +174,7 @@
         private System.Windows.Forms.Button zahl8Button;
         private System.Windows.Forms.Button zahl7Button;
         private System.Windows.Forms.Button zahl0Button;
+        private System.Windows.Forms.TextBox AnzeigeTextBox;
     }
 }
 
