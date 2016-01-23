@@ -18,8 +18,8 @@ namespace Calculator
         }
 
         string Anzeige;
-
-        double [] zahl = new double[100];
+        string gedrückt;
+        double[] zahl = new double[100];
 
         private void zahl1Button_Click(object sender, EventArgs e)
         {
@@ -79,6 +79,73 @@ namespace Calculator
         {
             Anzeige = Anzeige + Convert.ToString(0);
             AnzeigeTextBox.Text = Anzeige;
+        }
+
+        private void rechenoperatorMinusButton_Click(object sender, EventArgs e)
+        {
+            if (Anzeige == null)
+                MessageBox.Show("Sie haben noch keine Zahlen ausgewählt.");
+            else
+                zahl[0] = Convert.ToDouble(Anzeige);
+            Anzeige = null;
+            gedrückt = "-";
+            AnzeigeTextBox.Text = null;
+        }
+
+        private void rechenoperatorPlusButton_Click(object sender, EventArgs e)
+        {
+            if (Anzeige == null)
+                MessageBox.Show("Sie haben noch keine Zahlen ausgewählt.");
+            else
+                zahl[0] = Convert.ToDouble(Anzeige);
+            Anzeige = null;
+            gedrückt = "+";
+            AnzeigeTextBox.Text = null;
+            
+        }
+
+        private void rechenoperatorErgebnisButton_Click(object sender, EventArgs e)
+        {
+            if (Anzeige == null)
+                MessageBox.Show("Sie haben noch keine Zahlen ausgewählt.");
+            else if (gedrückt == "-")
+            {
+                zahl[1] = Convert.ToDouble(Anzeige);
+                zahl[2] = zahl[0] - zahl[1];
+                zahl[3] = zahl[2];
+                AnzeigeTextBox.Text = Convert.ToString(zahl[2]);
+                leeren();
+                Anzeige = Convert.ToString(zahl[3]);
+            }
+            else if (gedrückt == "+")
+            {
+                zahl[1] = Convert.ToDouble(Anzeige);
+                zahl[2] = zahl[0] + zahl[1];
+                zahl[3] = zahl[2];
+                AnzeigeTextBox.Text = Convert.ToString(zahl[2]);
+                leeren();
+                Anzeige = Convert.ToString(zahl[3]);
+            }
+            else if (gedrückt == null)
+            {
+             MessageBox.Show("Sie müssen erst noch einen Rechenoperator auswählen.");
+            }
+
+        }
+
+        public void leeren()
+        {
+            zahl[0] = 0;
+            zahl[1] = 0;
+            zahl[2] = 0;
+            gedrückt = null;
+            Anzeige = null;
+        }
+
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            leeren();
+            AnzeigeTextBox.Text = null;
         }
     }
 }
