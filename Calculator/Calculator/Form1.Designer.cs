@@ -197,7 +197,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(266, 261);
+            this.ClientSize = new System.Drawing.Size(203, 234);
             this.Controls.Add(this.clearButton);
             this.Controls.Add(this.rechenoperatorErgebnisButton);
             this.Controls.Add(this.rechenoperatorPlusButton);
@@ -213,6 +213,8 @@
             this.Controls.Add(this.zahl3Button);
             this.Controls.Add(this.zahl2Button);
             this.Controls.Add(this.zahl1Button);
+            this.MaximumSize = new System.Drawing.Size(219, 273);
+            this.MinimumSize = new System.Drawing.Size(219, 273);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
