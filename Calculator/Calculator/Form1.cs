@@ -227,6 +227,13 @@ namespace Calculator
 
         private void clearButton_Click(object sender, EventArgs e)
         {
+            Anzeige = AnzeigeTextBox.Text;
+            Anzeige = Anzeige.Remove(Anzeige.Length - 1);
+            AnzeigeTextBox.Text = Anzeige;
+        }
+
+        private void clearallButton_Click(object sender, EventArgs e)
+        {
             leeren();
             AnzeigeTextBox.Text = null;
         }
