@@ -233,6 +233,7 @@
             this.kommaButton.TabIndex = 18;
             this.kommaButton.Text = ".";
             this.kommaButton.UseVisualStyleBackColor = true;
+            this.kommaButton.Click += new System.EventHandler(this.kommaButton_Click);
             // 
             // Form1
             // 

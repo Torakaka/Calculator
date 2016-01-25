@@ -237,5 +237,19 @@ namespace Calculator
             leeren();
             AnzeigeTextBox.Text = null;
         }
+
+        private void kommaButton_Click(object sender, EventArgs e)
+        {
+            if (prüfer == true)
+            {
+                
+                Anzeige = "0,";
+                AnzeigeTextBox.Text = Anzeige;
+                prüfer = false;
+            }
+            else
+                Anzeige = Anzeige +",";
+            AnzeigeTextBox.Text = Anzeige;
+        }
     }
 }
