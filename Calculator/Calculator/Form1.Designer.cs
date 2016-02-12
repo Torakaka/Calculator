@@ -45,7 +45,7 @@
             this.clearButton = new System.Windows.Forms.Button();
             this.clearallButton = new System.Windows.Forms.Button();
             this.rechenoperatorMalButton = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.recenoperatorGeteiltButton = new System.Windows.Forms.Button();
             this.kommaButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -215,15 +215,17 @@
             this.rechenoperatorMalButton.TabIndex = 16;
             this.rechenoperatorMalButton.Text = "x";
             this.rechenoperatorMalButton.UseVisualStyleBackColor = true;
+            this.rechenoperatorMalButton.Click += new System.EventHandler(this.rechenoperatorMalButton_Click);
             // 
-            // button2
+            // recenoperatorGeteiltButton
             // 
-            this.button2.Location = new System.Drawing.Point(121, 179);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(29, 28);
-            this.button2.TabIndex = 17;
-            this.button2.Text = "/";
-            this.button2.UseVisualStyleBackColor = true;
+            this.recenoperatorGeteiltButton.Location = new System.Drawing.Point(121, 179);
+            this.recenoperatorGeteiltButton.Name = "recenoperatorGeteiltButton";
+            this.recenoperatorGeteiltButton.Size = new System.Drawing.Size(29, 28);
+            this.recenoperatorGeteiltButton.TabIndex = 17;
+            this.recenoperatorGeteiltButton.Text = "/";
+            this.recenoperatorGeteiltButton.UseVisualStyleBackColor = true;
+            this.recenoperatorGeteiltButton.Click += new System.EventHandler(this.recenoperatorGeteiltButton_Click);
             // 
             // kommaButton
             // 
@@ -239,9 +241,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(203, 234);
+            this.ClientSize = new System.Drawing.Size(203, 235);
             this.Controls.Add(this.kommaButton);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.recenoperatorGeteiltButton);
             this.Controls.Add(this.rechenoperatorMalButton);
             this.Controls.Add(this.clearallButton);
             this.Controls.Add(this.clearButton);
@@ -287,7 +289,7 @@
         private System.Windows.Forms.Button clearButton;
         private System.Windows.Forms.Button clearallButton;
         private System.Windows.Forms.Button rechenoperatorMalButton;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button recenoperatorGeteiltButton;
         private System.Windows.Forms.Button kommaButton;
     }
 }

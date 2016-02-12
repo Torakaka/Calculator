@@ -82,6 +82,16 @@ namespace Calculator
             operatorAuswaehlen("+");
         }
 
+        private void rechenoperatorMalButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void recenoperatorGeteiltButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void rechenoperatorErgebnisButton_Click(object sender, EventArgs e)
         {
             if (gedrückt == "-")
