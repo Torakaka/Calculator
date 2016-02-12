@@ -24,62 +24,52 @@ namespace Calculator
 
         private void zahl1Button_Click(object sender, EventArgs e)
         {
-                Anzeige = Anzeige + Convert.ToString(1);
-            AnzeigeTextBox.Text = Anzeige;
+            zahlAuswaehlen(1);
         }
 
         private void zahl2Button_Click(object sender, EventArgs e)
         {
-                Anzeige = Anzeige + Convert.ToString(2);
-            AnzeigeTextBox.Text = Anzeige;
+            zahlAuswaehlen(2);
         }
 
         private void zahl3Button_Click(object sender, EventArgs e)
         {
-                Anzeige = Anzeige + Convert.ToString(3);
-            AnzeigeTextBox.Text = Anzeige;
+            zahlAuswaehlen(3);
         }
 
         private void zahl4Button_Click(object sender, EventArgs e)
         {
-                Anzeige = Anzeige + Convert.ToString(4);
-            AnzeigeTextBox.Text = Anzeige;
+            zahlAuswaehlen(4);
         }
 
         private void zahl5Button_Click(object sender, EventArgs e)
         {
-                Anzeige = Anzeige + Convert.ToString(5);
-            AnzeigeTextBox.Text = Anzeige;
+            zahlAuswaehlen(5);
         }
 
         private void zahl6Button_Click(object sender, EventArgs e)
         {
-                Anzeige = Anzeige + Convert.ToString(6);
-            AnzeigeTextBox.Text = Anzeige;
+            zahlAuswaehlen(6);
         }
 
         private void zahl7Button_Click(object sender, EventArgs e)
         {
-                Anzeige = Anzeige + Convert.ToString(7);
-            AnzeigeTextBox.Text = Anzeige;
+            zahlAuswaehlen(7);
         }
 
         private void zahl8Button_Click(object sender, EventArgs e)
         {
-                Anzeige = Anzeige + Convert.ToString(8);
-            AnzeigeTextBox.Text = Anzeige;
+            zahlAuswaehlen(8);
         }
 
         private void zahl9Button_Click(object sender, EventArgs e)
         {
-                Anzeige = Anzeige + Convert.ToString(9);
-            AnzeigeTextBox.Text = Anzeige;
+            zahlAuswaehlen(9);
         }
 
         private void zahl0Button_Click(object sender, EventArgs e)
         {
-                Anzeige = Anzeige + Convert.ToString(0);
-            AnzeigeTextBox.Text = Anzeige;
+            zahlAuswaehlen(0);
         }
 
         private void rechenoperatorMinusButton_Click(object sender, EventArgs e)
@@ -91,6 +81,7 @@ namespace Calculator
             Anzeige = null;
             gedrückt = "-";
             AnzeigeTextBox.Text = null;
+            prüfer = false;
         }
 
         private void rechenoperatorPlusButton_Click(object sender, EventArgs e)
@@ -102,6 +93,7 @@ namespace Calculator
             Anzeige = null;
             gedrückt = "+";
             AnzeigeTextBox.Text = null;
+            prüfer = false;
 
         }
 
@@ -117,7 +109,6 @@ namespace Calculator
                 AnzeigeTextBox.Text = Convert.ToString(zahl[2]);
                 leeren();
                 Anzeige = Convert.ToString(zahl[3]);
-                prüfer = true;
             }
             else if (gedrückt == "+")
             {
@@ -127,7 +118,6 @@ namespace Calculator
                 AnzeigeTextBox.Text = Convert.ToString(zahl[2]);
                 leeren();
                 Anzeige = Convert.ToString(zahl[3]);
-                prüfer = true;
             }
             else if (gedrückt == null)
             {
@@ -143,6 +133,7 @@ namespace Calculator
             zahl[2] = 0;
             gedrückt = null;
             Anzeige = null;
+            prüfer = false;
         }
 
         private void clearButton_Click(object sender, EventArgs e)
@@ -160,15 +151,25 @@ namespace Calculator
 
         private void kommaButton_Click(object sender, EventArgs e)
         {
-            if (prüfer == true)
+            if (prüfer == false)
             {
                 Anzeige = "0,";
                 AnzeigeTextBox.Text = Anzeige;
-                prüfer = false;
+                prüfer = true;
             }
-            else
+
+            else if(!Anzeige.Contains(','))
+            {
                 Anzeige = Anzeige + ",";
+                AnzeigeTextBox.Text = Anzeige;
+            }
+        }
+
+        private void zahlAuswaehlen(int i)
+        {
+            Anzeige = Anzeige + Convert.ToString(i);
             AnzeigeTextBox.Text = Anzeige;
+            prüfer = true;
         }
     }
 }
