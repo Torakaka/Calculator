@@ -74,34 +74,17 @@ namespace Calculator
 
         private void rechenoperatorMinusButton_Click(object sender, EventArgs e)
         {
-            if (Anzeige == null)
-                MessageBox.Show("Sie haben noch keine Zahlen ausgewählt.");
-            else
-                zahl[0] = Convert.ToDouble(Anzeige);
-            Anzeige = null;
-            gedrückt = "-";
-            AnzeigeTextBox.Text = null;
-            prüfer = false;
+            operatorAuswaehlen("-");
         }
 
         private void rechenoperatorPlusButton_Click(object sender, EventArgs e)
         {
-            if (Anzeige == null)
-                MessageBox.Show("Sie haben noch keine Zahlen ausgewählt.");
-            else
-                zahl[0] = Convert.ToDouble(Anzeige);
-            Anzeige = null;
-            gedrückt = "+";
-            AnzeigeTextBox.Text = null;
-            prüfer = false;
-
+            operatorAuswaehlen("+");
         }
 
         private void rechenoperatorErgebnisButton_Click(object sender, EventArgs e)
         {
-            if (Anzeige == null)
-                MessageBox.Show("Sie haben noch keine Zahlen ausgewählt.");
-            else if (gedrückt == "-")
+            if (gedrückt == "-")
             {
                 zahl[1] = Convert.ToDouble(Anzeige);
                 zahl[2] = zahl[0] - zahl[1];
@@ -119,10 +102,6 @@ namespace Calculator
                 leeren();
                 Anzeige = Convert.ToString(zahl[3]);
             }
-            else if (gedrückt == null)
-            {
-                MessageBox.Show("Sie müssen erst noch einen Rechenoperator auswählen.");
-            }
 
         }
 
@@ -138,9 +117,12 @@ namespace Calculator
 
         private void clearButton_Click(object sender, EventArgs e)
         {
-            Anzeige = AnzeigeTextBox.Text;
-            Anzeige = Anzeige.Remove(Anzeige.Length - 1);
-            AnzeigeTextBox.Text = Anzeige;
+            if (Anzeige != null)
+            {
+                Anzeige = AnzeigeTextBox.Text;
+                Anzeige = Anzeige.Remove(Anzeige.Length - 1);
+                AnzeigeTextBox.Text = Anzeige;
+            }
         }
 
         private void clearallButton_Click(object sender, EventArgs e)
@@ -170,6 +152,18 @@ namespace Calculator
             Anzeige = Anzeige + Convert.ToString(i);
             AnzeigeTextBox.Text = Anzeige;
             prüfer = true;
+        }
+
+        private void operatorAuswaehlen(string x)
+        {
+            if (Anzeige != null)
+            {
+                zahl[0] = Convert.ToDouble(Anzeige);
+                Anzeige = null;
+                gedrückt = x;
+                AnzeigeTextBox.Text = null;
+                prüfer = false;
+            }
         }
     }
 }
