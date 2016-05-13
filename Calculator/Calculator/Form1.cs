@@ -14,12 +14,15 @@ namespace Calculator
     {
         public Form1()
         {
+            //+++TEST+++TEST+++TEST+++
             InitializeComponent();
+            //+++NOCHMAL+++
         }
         bool prüfer = false;
         string Anzeige;
         string gedrückt;
         double[] zahl = new double[100];
+        //hallo
 
 
         private void zahl1Button_Click(object sender, EventArgs e)
